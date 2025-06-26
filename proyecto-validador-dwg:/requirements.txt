@@ -1,0 +1,7 @@
+flask
+flask-login
+flask-cors
+ezdxf
+bcrypt
+reportlab
+psycopg2-binary
