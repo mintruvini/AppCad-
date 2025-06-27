@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Usuario</title>
+</head>
+<body>
+    <h2>Bienvenido al sistema</h2>
+
+      {%if email%}
+    <p>Estás logueado como: <strong>{{ email }}</strong></p>
+    {% endif %}
+
+    <ul>
+        <li><a href="/subir">Cargar archivo DWG</a></li>
+        <li><a href="/historial">Ver historial de trámites</a></li>
+        <li><a href="/instructivos">Instructivos</a></li>
+        <li><a href="/notificaciones">Notificaciones</a></li>
+        <li><a href="/logout">Cerrar sesión</a></li>
+    </ul>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>

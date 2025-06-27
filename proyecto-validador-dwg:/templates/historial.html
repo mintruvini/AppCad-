@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial de Trámites</title>
+</head>
+<body>
+    <h2>Mis archivos enviados</h2>
+
+    {% if archivos %}
+        <table border="1">
+            <tr>
+                <th>Nombre del archivo</th>
+                <th>Fecha de subida</th>
+                <th>Estado</th>
+            </tr>
+            {% for archivo in archivos %}
+            <tr>
+                <td>{{ archivo[0] }}</td>
+                <td>{{ archivo[1] }}</td>
+                <td>{{ archivo[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No se encontraron archivos cargados.</p>
+    {% endif %}
+
+    <a href="/dashboard">Volver al panel</a>
+    <a href="/informe/{{ id_archivo }}">Ver informe</a>
+
+</body>
+</html>

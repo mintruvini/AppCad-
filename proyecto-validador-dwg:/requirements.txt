@@ -5,3 +5,4 @@ ezdxf
 bcrypt
 reportlab
 psycopg2-binary
+pip freeze > requirements.txt

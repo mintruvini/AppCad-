@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Subir archivo DWG</title>
+</head>
+<body>
+    <h2>Subir plano DWG</h2>
+
+    <form action="/subir" method="POST" enctype="multipart/form-data">
+        <label>Seleccioná tu archivo DWG:</label><br>
+        <input type="file" name="archivo" accept=".dwg" required><br><br>
+
+        <button type="submit">Cargar</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>

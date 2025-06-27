@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe Técnico</title>
+</head>
+<body>
+    <h2>Informe del Archivo: {{ nombre_archivo }}</h2>
+
+    <p><strong>Resultado:</strong> 
+        {% if cumple %}
+            ✅ Cumple con la normativa
+        {% else %}
+            ❌ No cumple con la normativa
+        {% endif %}
+    </p>
+
+    <p><strong>Observaciones:</strong> {{ observaciones or "Sin observaciones" }}</p>
+    <p><strong>Fecha del informe:</strong> {{ fecha }}</p>
+
+    <p><a href="/{{ url_pdf }}" target="_blank">📄 Ver o descargar informe PDF</a></p>
+    <br>
+    <a href="/historial">Volver al historial</a>
+</body>
+</html>

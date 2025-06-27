@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Notificaciones</title>
+</head>
+<body>
+    <h2>Notificaciones del sistema</h2>
+
+    {% if notificaciones %}
+        <ul>
+            {% for notif in notificaciones %}
+                <li>
+                    <strong>{{ notif[0] }}</strong> ({{ notif[1] }}):<br>
+                    {{ notif[2] }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tenés notificaciones pendientes.</p>
+    {% endif %}
+
+    <a href="/dashboard">Volver al panel</a>
+</body>
+</html>
